@@ -262,7 +262,7 @@ public class Menu extends javax.swing.JFrame {
             int numero = Integer.parseInt(txtNodo.getText());
 
             
-            if (numeroMaxNodos > cantActualNodos) {
+            if (numeroMaxNodos >= cantActualNodos) {
                 //se añade el nodo
                 fn.add(numero);
                 //se muestra un mensaje
