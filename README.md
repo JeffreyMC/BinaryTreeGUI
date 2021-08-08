@@ -1,5 +1,5 @@
 [![JeffreyMC](https://img.shields.io/badge/JeffreyMC-Developer-red)](https://github.com/JeffreyMC)
-[![Licencia](https://img.shields.io/github/license/JeffreyMC/PagoConMonedas)](https://github.com/JeffreyMC/PagoConMonedas/blob/main/LICENSE)
+[![Licencia](https://img.shields.io/github/license/JeffreyMC/bINARYtREEgui)](https://github.com/JeffreyMC/BinaryTreeGUI/blob/main/LICENSE)
 [![Twitter Follow](https://img.shields.io/twitter/follow/JeffreyMC16?style=social)](https://twitter.com/JeffreyMC16)
 
 #  Árbol binario
