@@ -128,7 +128,7 @@ public class Funciones {
 }
      //eliminar nodo
     public void borrarNodo(int valor){
-        borrarRecursivo(root, valor);
+        borrarRecursivo(root, valor);              
     }
     
     private Nodo borrarRecursivo(Nodo actual, int valor){

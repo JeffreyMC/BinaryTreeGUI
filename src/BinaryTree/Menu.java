@@ -251,7 +251,7 @@ public class Menu extends javax.swing.JFrame {
             int numero = Integer.parseInt(txtNodo.getText());
 
             
-            if (numeroMaxNodos >= cantActualNodos) {
+            if (numeroMaxNodos > cantActualNodos) {
                 //se añade el nodo
                 fn.add(numero);
 
@@ -314,6 +314,10 @@ public class Menu extends javax.swing.JFrame {
             
             if(existe){
                 fn.borrarNodo(dato);
+                
+                //se disminuye la cantidad de nodos en el programa
+                cantActualNodos--;
+                
                 
                  //SE IMPRIMEN LOS ÓRDENES DEL ÁRBOL/////////////
                 
