@@ -8,6 +8,7 @@
 
 * Indicar cantidad de nodos
 * Insertar Nodos
+* Eliminar Nodo
 * Imprimir lista de nodos en preOrden
 * Imprimir lista de nodos en inOrden
 * imprimir lista de nodos en postOrden

@@ -23,10 +23,6 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
                 
         btnGuardarNodo.setEnabled(false);
-        btnPreOrder.setEnabled(false);
-        btnPreOrder.setEnabled(false);
-        btnInOrder.setEnabled(false);
-        btnPostOrder.setEnabled(false);
         btnAltura.setEnabled(false);
         
     }
@@ -49,15 +45,18 @@ public class Menu extends javax.swing.JFrame {
         txtNodo = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
-        btnPreOrder = new javax.swing.JButton();
-        btnInOrder = new javax.swing.JButton();
-        btnPostOrder = new javax.swing.JButton();
         txtPreOrder = new javax.swing.JTextField();
         txtInOrder = new javax.swing.JTextField();
         txtPostOrder = new javax.swing.JTextField();
         btnAltura = new javax.swing.JButton();
         txtAltura = new javax.swing.JTextField();
         btnGuardarNodo = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        txtEliminarNodo = new javax.swing.JTextField();
+        btnEliminarNodo = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,27 +76,6 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setText("Recorridos del árbol");
-
-        btnPreOrder.setText("PreOrder");
-        btnPreOrder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPreOrderActionPerformed(evt);
-            }
-        });
-
-        btnInOrder.setText("InOrder");
-        btnInOrder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInOrderActionPerformed(evt);
-            }
-        });
-
-        btnPostOrder.setText("PostOrder");
-        btnPostOrder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPostOrderActionPerformed(evt);
-            }
-        });
 
         txtPreOrder.setEditable(false);
 
@@ -121,30 +99,28 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Eliminar Nodo");
+
+        btnEliminarNodo.setText("Eliminar");
+        btnEliminarNodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarNodoActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setText("PreOrder");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setText("InOrder");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setText("PostOrder");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtCantNodos, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(cantNodos))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel3)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnGuardarNodo)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,29 +133,52 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(205, 205, 205)
-                        .addComponent(jLabel4))
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPreOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtInOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(txtPostOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel3)
+                        .addGap(9, 9, 9)
+                        .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnGuardarNodo)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtEliminarNodo, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnEliminarNodo))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(btnPostOrder)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPostOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnInOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtInOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnPreOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtPreOrder, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtCantNodos, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cantNodos))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(btnAltura)
                         .addGap(26, 26, 26)
-                        .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 26, Short.MAX_VALUE))
+                        .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(205, 205, 205)
+                        .addComponent(jLabel4)))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -191,48 +190,41 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(txtCantNodos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cantNodos))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
+                    .addComponent(btnGuardarNodo)
                     .addComponent(txtNodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGuardarNodo))
+                    .addComponent(jLabel5)
+                    .addComponent(txtEliminarNodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminarNodo))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
+                .addGap(51, 51, 51)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPreOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtInOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPostOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
                 .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPreOrder)
-                    .addComponent(txtPreOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInOrder)
-                    .addComponent(txtInOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPostOrder)
-                    .addComponent(txtPostOrder, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAltura)
                     .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnPreOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPreOrderActionPerformed
-        txtPreOrder.setText(null);
-        //se limpia la lista de nodos para imprimir de nuevo
-        fn.setListaPre("");
-        //se recorre
-        fn.preOrden(fn.root);
-        
-        txtPreOrder.setText(fn.getListaPre());
-    }//GEN-LAST:event_btnPreOrderActionPerformed
 
     private void cantNodosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cantNodosActionPerformed
         try{
@@ -246,9 +238,6 @@ public class Menu extends javax.swing.JFrame {
             txtCantNodos.setEnabled(false);
             
             //se habilitan los demás botones
-            btnPreOrder.setEnabled(true);
-            btnInOrder.setEnabled(true);
-            btnPostOrder.setEnabled(true);
             btnAltura.setEnabled(true);
         }
         catch(Exception e){
@@ -265,13 +254,34 @@ public class Menu extends javax.swing.JFrame {
             if (numeroMaxNodos >= cantActualNodos) {
                 //se añade el nodo
                 fn.add(numero);
-                //se muestra un mensaje
 
                 //se aumenta la cantidad de nodos
                 cantActualNodos++;
                 
                 //se limpia el cammpo
                 txtNodo.setText("");
+                
+                //SE IMPRIMEN LOS ÓRDENES DEL ÁRBOL/////////////
+                
+                //se limpian los campos
+                txtInOrder.setText(null);
+                //se limpia la lista antes de imprimirla
+                fn.setListaIn("");
+                //se recorre el arbol
+                fn.inOrden(fn.root);
+                txtInOrder.setText(fn.getListaIn());
+                
+                txtPreOrder.setText(null);
+                //se limpia la lista de nodos para imprimir de nuevo
+                fn.setListaPre("");
+                //se recorre
+                fn.preOrden(fn.root);
+                txtPreOrder.setText(fn.getListaPre());
+                
+                txtPostOrder.setText(null);
+                fn.setListaPost("");
+                fn.postOrden(fn.root);
+                txtPostOrder.setText(fn.getListaPost());
                 
             }
             else{
@@ -286,27 +296,6 @@ public class Menu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnGuardarNodoActionPerformed
 
-    private void btnInOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInOrderActionPerformed
-        //se limpian los campos
-        txtInOrder.setText(null);
-        //se limpia la lista antes de imprimirla
-        fn.setListaIn("");
-        //se recorre el arbol
-        fn.inOrden(fn.root);
-        
-        txtInOrder.setText(fn.getListaIn());
-    }//GEN-LAST:event_btnInOrderActionPerformed
-
-    private void btnPostOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPostOrderActionPerformed
-        txtPostOrder.setText(null);
-        
-        fn.setListaPost("");
-        
-        fn.postOrden(fn.root);
-        
-        txtPostOrder.setText(fn.getListaPost());
-    }//GEN-LAST:event_btnPostOrderActionPerformed
-
     private void btnAlturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlturaActionPerformed
         
         txtAltura.setText(null);
@@ -315,6 +304,53 @@ public class Menu extends javax.swing.JFrame {
         
         txtAltura.setText(String.valueOf(altura));
     }//GEN-LAST:event_btnAlturaActionPerformed
+
+    private void btnEliminarNodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarNodoActionPerformed
+        try{
+            int dato = Integer.parseInt(txtEliminarNodo.getText());
+            
+            //verifica que exista el nodo
+            boolean existe = fn.buscaNodo(fn.root, dato);
+            
+            if(existe){
+                fn.borrarNodo(dato);
+                
+                 //SE IMPRIMEN LOS ÓRDENES DEL ÁRBOL/////////////
+                
+                //se limpian los campos
+                txtInOrder.setText(null);
+                //se limpia la lista antes de imprimirla
+                fn.setListaIn("");
+                //se recorre el arbol
+                fn.inOrden(fn.root);
+                txtInOrder.setText(fn.getListaIn());
+                
+                txtPreOrder.setText(null);
+                //se limpia la lista de nodos para imprimir de nuevo
+                fn.setListaPre("");
+                //se recorre
+                fn.preOrden(fn.root);
+                txtPreOrder.setText(fn.getListaPre());
+                
+                txtPostOrder.setText(null);
+                fn.setListaPost("");
+                fn.postOrden(fn.root);
+                txtPostOrder.setText(fn.getListaPost());
+                
+                JOptionPane.showMessageDialog(null, "El nodo " + dato + " ha sido eliminado",
+                    "Eliminar Nodo", JOptionPane.INFORMATION_MESSAGE);
+            }
+            else{
+                 JOptionPane.showMessageDialog(null, "El nodo " + dato + " NO existe",
+                    "Eliminar Nodo", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            txtEliminarNodo.setText(null);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Ingrese solo números enteros",
+                    "Eliminar Nodo", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnEliminarNodoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,19 +389,22 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAltura;
+    private javax.swing.JButton btnEliminarNodo;
     private javax.swing.JButton btnGuardarNodo;
-    private javax.swing.JButton btnInOrder;
-    private javax.swing.JButton btnPostOrder;
-    private javax.swing.JButton btnPreOrder;
     private javax.swing.JButton cantNodos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField txtAltura;
     private javax.swing.JTextField txtCantNodos;
+    private javax.swing.JTextField txtEliminarNodo;
     private javax.swing.JTextField txtInOrder;
     private javax.swing.JTextField txtNodo;
     private javax.swing.JTextField txtPostOrder;

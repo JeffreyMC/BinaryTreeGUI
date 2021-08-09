@@ -126,5 +126,58 @@ public class Funciones {
             return 1 + alturaIzquierda;
         }
 }
+     //eliminar nodo
+    public void borrarNodo(int valor){
+        borrarRecursivo(root, valor);
+    }
+    
+    private Nodo borrarRecursivo(Nodo actual, int valor){
+        if(actual == null)
+            return null;
+        if(valor == actual.valor){
+            //si el nodo es una terminación u hoja
+            if(actual.izquierda == null && actual.derecha == null){
+                return null;
+            }
+            
+            //si el nodo tiene un hijo
+            if(actual.derecha == null)
+                return actual.izquierda;
+            if(actual.izquierda == null)
+                return actual.derecha;
+            
+            //si el nodo tiene dos hijos
+            int valorMasPequeno = encuentraValorMasPequeno(actual.derecha);
+            actual.valor = valorMasPequeno;
+            actual.derecha = borrarRecursivo(actual.derecha, valorMasPequeno);
+            return actual;
+        }
+        if(valor < actual.valor){
+            actual.izquierda = borrarRecursivo(actual.izquierda, valor);
+            return actual;
+        }
+        actual.derecha = borrarRecursivo(actual.derecha, valor);
+        return actual;
+                    
+    }
+    
+    //encuentra el nodo con el valor más pequeño
+    private int encuentraValorMasPequeno(Nodo root){
+         return root.izquierda == null ? root.valor : encuentraValorMasPequeno(root.izquierda);   
+    }
+    
+     //encuentra nodo
+    public boolean buscaNodo(Nodo actual, int valor){
+        if(actual == null)
+            return false;
+        if(valor == actual.valor){
+            return true;
+        }
+        if(valor <  actual.valor){
+            return buscaNodo(actual.izquierda, valor);
+        }
+        else
+            return buscaNodo(actual.derecha, valor);
+    }
    
 }
